@@ -1,0 +1,19 @@
+n=int(input())
+
+count=[]
+books=[]
+
+for i in range(n):
+    stroka=input().split('/')
+    if stroka[1]=='m':
+        if stroka[0] not in books:
+            books.append(stroka[0])
+            count.append(1)
+        else:
+            count[books.index(stroka[0])]+=1
+
+print('«'+str(books[count.index(max(count))])+'»')
+
+# в результате работы программы на входных данных
+# из файла «6.5.txt» выводится строка
+# «The Count of Monte Cristo»
